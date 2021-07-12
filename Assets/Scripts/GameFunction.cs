@@ -7,6 +7,7 @@ public class GameFunction : MonoBehaviour
 {
     public GameObject Emeny; //宣告物件，名稱Emeny
     public float time; //宣告浮點數，名稱time
+    public float BulletTime; //宣告浮點數，名稱time
     
     //記分板
     public Text ScoreText; //宣告一個ScoreText的text
@@ -27,6 +28,10 @@ public class GameFunction : MonoBehaviour
     public GameObject RestartButton; //宣告RestartButto的物件
 
     public GameObject QuitButton; //宣告QuitButton的物件
+    //手機移動與自動射擊
+    public GameObject Ship;
+
+    public GameObject Bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +53,19 @@ public class GameFunction : MonoBehaviour
             Vector3 pos = new Vector3(Random.Range(-2.5f,2.5f),4.5f,0); //宣告位置pos，Random.Range(-2.5f,2.5f)代表X是2.5到-2.5之間隨機
             Instantiate(Emeny,pos,transform.rotation);//產生敵人
             time = 0f; //時間歸零
+        }
+
+        BulletTime += Time.deltaTime;
+
+        if (BulletTime > 0.15f && IsPlaying == true) //每隔0.15秒產生一個子彈
+        {
+
+            Vector3 Bullet_pos = Ship.transform.position + new Vector3(0, 0.6f, 0);
+
+            Instantiate(Bullet, Bullet_pos, Ship.transform.rotation);
+
+            BulletTime = 0f;
+
         }
     }
 

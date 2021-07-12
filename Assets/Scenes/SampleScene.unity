@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Emeny: {fileID: 5901831025122427676, guid: d47b7be95b2d4374587eda31721ce62b, type: 3}
-  time: 0
+  BulletTime: 0
   ScoreText: {fileID: 1363923910}
   Score: 0
   GameTitle: {fileID: 1061214497}
@@ -507,6 +507,8 @@ MonoBehaviour:
   IsPlaying: 0
   RestartButton: {fileID: 18191932}
   QuitButton: {fileID: 72311908}
+  Ship: {fileID: 1345466491}
+  Bullet: {fileID: 4204658081452765349, guid: dab6f2042e4b3844ba610f7327906d2b, type: 3}
 --- !u!4 &253637454
 Transform:
   m_ObjectHideFlags: 0
@@ -1528,7 +1530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f0a764d01f0d34ba4160c6c20d756b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 4204658081452765349, guid: dab6f2042e4b3844ba610f7327906d2b, type: 3}
 --- !u!1 &1363923908
 GameObject:
   m_ObjectHideFlags: 0
